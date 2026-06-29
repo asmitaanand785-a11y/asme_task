@@ -1,7 +1,7 @@
 import Button from "./shared/Button";
 import { siteConfig } from "../config/navbarHero";
 
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
   
 export default function HeroSection() {
   const navigate = useNavigate();
