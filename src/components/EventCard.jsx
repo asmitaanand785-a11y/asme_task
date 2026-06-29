@@ -42,19 +42,22 @@ const EventCard = ({ title, description, images, date, location, status }) => {
   const getStatusColor = (status) => {
     switch (status?.toLowerCase()) {
       case "upcoming":
-        return "bg-blue-50 text-blue-600 border-blue-200";
+        return "bg-blue-50 text-blue-600 border-blue-200 dark:bg-[#163A72] dark:text-blue-100 dark:border-blue-400/40";
+
       case "ongoing":
-        return "bg-green-50 text-green-600 border-green-200";
+        return "bg-green-50 text-green-600 border-green-200 dark:bg-[#0F5132] dark:text-emerald-100 dark:border-emerald-400/40";
+
       case "completed":
-        return "bg-gray-50 text-gray-600 border-gray-200";
+        return "bg-gray-50 text-gray-600 border-gray-200 dark:bg-[#334155] dark:text-slate-100 dark:border-slate-500";
+
       default:
-        return "bg-gray-50 text-gray-600 border-gray-200";
+        return "bg-gray-50 text-gray-600 border-gray-200 dark:bg-[#334155] dark:text-slate-100 dark:border-slate-500";
     }
   };
 
   return (
     <div
-      className="bg-white border border-gray-200 hover:border-[#021640]/30 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group overflow-hidden"
+      className="bg-white dark:dark:bg-[#13233F] dark:border-slate-700 border border-gray-200 hover:border-[#021640]/30 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -135,10 +138,10 @@ const EventCard = ({ title, description, images, date, location, status }) => {
       {/* Content Section */}
       <div className="p-6 space-y-4">
         <div>
-          <h3 className="font-bold text-lg text-[#021640] leading-tight mb-2 line-clamp-2">
+          <h3 className="font-bold text-lg dark:text-white text-[#021640] leading-tight mb-2 line-clamp-2">
             {title || "Event Title"}
           </h3>
-          <p className="text-sm text-gray-600 line-clamp-3">
+          <p className="text-sm dark:text-gray-300 text-gray-600 line-clamp-3">
             {description || "Event description will be displayed here."}
           </p>
         </div>
@@ -146,27 +149,27 @@ const EventCard = ({ title, description, images, date, location, status }) => {
         {/* Event Meta Information */}
         <div className="space-y-2">
           {date && (
-            <div className="flex items-center text-sm text-gray-500">
-              <FaCalendar className="w-3 h-3 mr-2 text-[#021640]" />
+            <div className="flex items-center text-sm dark:text-gray-400 text-gray-500">
+              <FaCalendar className="w-3 h-3 mr-2 dark:text-blue-900 text-[#021640]" />
               <span>{date}</span>
             </div>
           )}
           {location && (
-            <div className="flex items-center text-sm text-gray-500">
-              <FaMapMarkerAlt className="w-3 h-3 mr-2 text-[#021640]" />
+            <div className="flex items-center text-sm dark:text-gray-400 text-gray-500">
+              <FaMapMarkerAlt className="w-3 h-3 mr-2 dark:text-blue-900 text-[#021640]" />
               <span>{location}</span>
             </div>
           )}
         </div>
 
         {/* Action Button */}
-        <button className="w-full bg-[#021640] text-white px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-300 hover:bg-[#021640]/90 hover:shadow-lg">
+        <button className="w-full bg-[#021640] dark:bg-blue-900 text-white px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-300 dark:hover:bg-blue-900/90 hover:bg-[#021640]/90 hover:shadow-lg">
           View Details
         </button>
       </div>
 
       {/* Accent line */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#021640] to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r dark:from-[#2563EB] dark:to-[#38BDF8] from-[#021640] to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
     </div>
   );
 };

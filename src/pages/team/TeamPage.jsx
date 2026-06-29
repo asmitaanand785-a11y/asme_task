@@ -94,15 +94,15 @@ const TeamPage = () => {
       : teamMembers.filter((member) => member.team === activeTeam);
 
   return (
-    <section className="relative bg-white min-h-screen px-4 sm:px-6 md:px-10 lg:px-16 pt-[80px] pb-16 sm:pb-20">
+    <section className="relative dark:bg-slate-900 bg-white min-h-screen px-4 sm:px-6 md:px-10 lg:px-16 pt-[80px] pb-16 sm:pb-20">
       {/* Header Section */}
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 pt-8">
           <div className="space-y-6">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#021640] leading-tight tracking-tight">
+            <h1 className="text-4xl sm:text-[42px] md:text-5xl font-bold dark:text-white text-[#021640] leading-tight tracking-tight">
               Meet Our Team
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto">
               Discover the passionate individuals driving innovation and
               excellence at ASME NIT Rourkela through their dedication and
               expertise.
@@ -120,8 +120,8 @@ const TeamPage = () => {
                 onClick={() => setActiveTeam(team.name)}
                 className={`px-8 py-3 rounded-lg border-2 text-base font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 ${
                   activeTeam === team.name
-                    ? "bg-[#021640] text-white border-[#021640] shadow-lg"
-                    : "bg-white text-[#021640] border-[#021640] hover:bg-[#021640] hover:text-white"
+                    ? "bg-[#021640] dark:bg-[#0F2A5F] dark:text-white dark:border-blue-900 text-white border-[#021640] shadow-lg"
+                    : "bg-white dark:bg-[#24364F] dark:text-slate-200 text-[#021640] dark:border-slate-600 border-[#021640] hover:bg-[#021640] dark:hover:bg-[#2C4363] hover:text-white"
                 }`}
               >
                 {team.name}
@@ -134,7 +134,7 @@ const TeamPage = () => {
             <div className="relative w-full max-w-xs">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="w-full px-6 py-3 bg-white border-2 border-[#021640] text-[#021640] rounded-lg font-semibold text-base flex items-center justify-between transition-all duration-300 hover:bg-[#021640] hover:text-white"
+                className="w-full px-6 py-3 bg-white border-2 border-[#021640] text-[#021640] dark:bg-[#0F2A5F] dark:text-white dark:border-blue-900 dark:hover:bg-blue-900 rounded-lg font-semibold text-base flex items-center justify-between transition-all duration-300 hover:bg-[#021640] hover:text-white"
               >
                 <span>{activeTeam}</span>
                 <FaChevronDown
@@ -143,7 +143,7 @@ const TeamPage = () => {
               </button>
 
               {isDropdownOpen && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-white border-2 border-[#021640] rounded-lg shadow-lg z-10 overflow-hidden">
+                <div className="absolute top-full left-0 right-0 mt-2 dark:bg-[#24364F] dark:border-blue-900 bg-white border-2 border-[#021640] rounded-lg shadow-lg z-10 overflow-hidden">
                   {teams.map((team) => (
                     <button
                       key={team.name}
@@ -151,10 +151,10 @@ const TeamPage = () => {
                         setActiveTeam(team.name);
                         setIsDropdownOpen(false);
                       }}
-                      className={`w-full px-6 py-3 text-left text-base font-medium transition-all duration-200 hover:bg-[#021640] hover:text-white ${
+                      className={`w-full px-6 py-3 text-left text-base font-medium transition-all duration-200 dark:hover:bg-[#2C4363] hover:bg-[#021640] hover:text-white ${
                         activeTeam === team.name
-                          ? "bg-[#021640] text-white"
-                          : "text-[#021640] border-b border-gray-200 last:border-b-0"
+                          ? "bg-[#021640] dark:bg-[#0F2A5F] text-white"
+                          : "text-[#021640] dark:text-slate-200 border-b dark:border-slate-600 border-gray-200 last:border-b-0"
                       }`}
                     >
                       {team.name}
@@ -169,11 +169,11 @@ const TeamPage = () => {
         {/* Team Description */}
         {activeTeam !== "All" && teamDescriptions[activeTeam] && (
           <div className="max-w-4xl mx-auto mb-16">
-            <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-200 shadow-md">
-              <h3 className="text-2xl font-bold text-[#021640] mb-6 text-center">
+            <div className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-700 dark:to-gray-800 rounded-2xl p-8 border border-gray-200 shadow-md">
+              <h3 className="text-3xl font-bold text-[#021640] dark:text-white mb-6 text-center">
                 About {teamDescriptions[activeTeam].title}
               </h3>
-              <p className="text-lg text-gray-700 leading-relaxed text-center">
+              <p className="text-lg dark:text-gray-300 text-gray-700 leading-relaxed text-center">
                 {teamDescriptions[activeTeam].description}
               </p>
             </div>
@@ -214,7 +214,7 @@ const TeamPage = () => {
               >
                 {filteredMembers.map((member, index) => (
                   <SwiperSlide key={index}>
-                    <div className="bg-white border border-gray-200 hover:border-[#021640]/30 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group overflow-hidden h-full">
+                    <div className="bg-white dark:bg-[#13233F] dark:border-slate-700 border border-gray-200 hover:border-[#021640]/30 dark:hover:shadow-[0_16px_35px_rgba(11,32,68,0.35)] rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group overflow-hidden h-full">
                       {/* Image */}
                       <div className="relative overflow-hidden">
                         <TeamMemberImage src={member.img} alt={member.name} />
@@ -222,7 +222,7 @@ const TeamPage = () => {
 
                         {/* Team badge for "All" view */}
                         {member.team && activeTeam === "All" && (
-                          <div className="absolute top-3 right-3 bg-[#021640]/90 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full font-medium">
+                          <div className="absolute top-3 right-3 bg-[#021640]/90 dark:bg-[#13233F] backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full font-medium">
                             {member.team}
                           </div>
                         )}
@@ -231,11 +231,11 @@ const TeamPage = () => {
                       {/* Content */}
                       <div className="p-6 space-y-4">
                         <div className="text-center">
-                          <h3 className="font-bold text-lg text-[#021640] leading-tight mb-2">
+                          <h3 className="font-bold text-lg dark:text-white text-[#021640] leading-tight mb-2">
                             {member.name || "Full Name"}
                           </h3>
                           {member.title && (
-                            <p className="text-sm font-medium text-gray-600 bg-gray-100 px-3 py-1 rounded-full inline-block">
+                            <p className="text-sm font-medium text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-slate-700 px-3 py-1 rounded-full inline-block">
                               {member.title}
                             </p>
                           )}
@@ -262,7 +262,7 @@ const TeamPage = () => {
                       </div>
 
                       {/* Accent line */}
-                      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#021640] to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r dark:from-[#2563EB] dark:to-[#38BDF8] from-[#021640] to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </div>
                   </SwiperSlide>
                 ))}
@@ -274,7 +274,7 @@ const TeamPage = () => {
               {filteredMembers.map((member, index) => (
                 <div
                   key={index}
-                  className="bg-white border border-gray-200 hover:border-[#021640]/30 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group overflow-hidden"
+                  className="bg-white dark:bg-[#13233F] dark:border-slate-700 border border-gray-200 hover:border-[#021640]/30 dark:hover:shadow-[0_16px_35px_rgba(11,32,68,0.35)] rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group overflow-hidden"
                   style={{
                     animationDelay: `${index * 100}ms`,
                   }}
@@ -295,11 +295,11 @@ const TeamPage = () => {
                   {/* Content */}
                   <div className="p-6 space-y-4">
                     <div className="text-center">
-                      <h3 className="font-bold text-lg text-[#021640] leading-tight mb-2">
+                      <h3 className="font-bold text-lg dark:text-white text-[#021640] leading-tight mb-2">
                         {member.name || "Full Name"}
                       </h3>
                       {member.title && (
-                        <p className="text-sm font-medium text-gray-600 bg-gray-100 px-3 py-1 rounded-full inline-block">
+                        <p className="text-sm font-medium text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-slate-700 px-3 py-1 rounded-full inline-block">
                           {member.title}
                         </p>
                       )}
@@ -326,7 +326,7 @@ const TeamPage = () => {
                   </div>
 
                   {/* Accent line */}
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#021640] to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r dark:from-[#2563EB] dark:to-[#38BDF8] from-[#021640] to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </div>
               ))}
             </div>

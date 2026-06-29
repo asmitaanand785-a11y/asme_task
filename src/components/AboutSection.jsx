@@ -4,7 +4,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative bg-white px-4 sm:px-6 md:px-10 lg:px-16 py-16 sm:py-20"
+      className="relative bg-white dark:bg-slate-900 px-4 sm:px-6 md:px-10 lg:px-16 py-16 sm:py-20"
     >
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
         {/* Image Section */}
@@ -24,23 +24,12 @@ export default function AboutSection() {
         {/* Text Content */}
         <div className="w-full lg:w-1/2 space-y-8 text-center lg:text-left order-1 lg:order-2">
           <div className="space-y-6">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#021640] leading-tight tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#021640] dark:text-white leading-tight tracking-tight">
               {siteConfig.about.title}
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
               {siteConfig.about.description}
             </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start items-center gap-4 pt-4">
-            <a
-              href="#cards"
-              role="button"
-              tabIndex={0}
-              className="bg-[#021640] hover:bg-[#021640]/90 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg"
-            >
-              {siteConfig.about.button}
-            </a>
           </div>
         </div>
       </div>

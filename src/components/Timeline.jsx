@@ -95,7 +95,7 @@ const Timeline = () => {
   return (
     <section
       id="achievements"
-      className="min-h-screen py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden"
+      className="min-h-screen py-20 bg-gradient-to-b from-white to-gray-50 dark:from-slate-900 dark:to-slate-900 relative overflow-hidden"
     >
       {/* Add custom CSS animations */}
       <style>{`
@@ -129,10 +129,10 @@ const Timeline = () => {
       >
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0B2044] mb-6">
+          <h2 className="text-4xl dark:text-white md:text-5xl font-bold text-[#0B2044] mb-6">
             Excellence Through Innovation
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl dark:text-gray-300 text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Discover our remarkable journey of achievements spanning over a
             decade of engineering excellence, innovation, and competitive
             success in mechanical engineering challenges worldwide.
@@ -150,17 +150,17 @@ const Timeline = () => {
 
             {/* Animated Progress Line */}
             <div
-              className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 w-1 bg-gradient-to-b from-[#0B2044] to-[#51B8F2] rounded-full timeline-line-animated"
+              className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 w-1 bg-gradient-to-b dark:from-slate-700 dark:to-slate-600 from-[#0B2044] to-[#51B8F2] rounded-full timeline-line-animated"
               style={{
                 height: `${scrollProgress * 100}%`,
                 marginLeft: "-1px",
-                boxShadow: "0 0 10px rgba(81, 184, 242, 0.4)",
+                boxShadow: "0 0 10px rgba(81, 184, 242, 0.3)",
                 zIndex: 10,
               }}
             />
 
             {/* Mobile Timeline Line - Continuous */}
-            <div className="md:hidden absolute left-6 top-0 w-0.5 h-full bg-gradient-to-b from-[#0B2044] to-[#51B8F2] rounded-full z-0" />
+            <div className="md:hidden absolute left-6 top-0 w-0.5 h-full bg-gradient-to-b from-[#0B2044] to-[#51B8F2] dark:from-slate-700 dark:to-slate-600 rounded-full z-0" />
 
             {/* Timeline Items */}
             <div className="space-y-16 md:space-y-20">
@@ -196,7 +196,7 @@ const Timeline = () => {
                           <div className="relative">
                             {/* Connecting Line */}
                             <div
-                              className={`absolute top-1/2 transform -translate-y-1/2 h-0.5 bg-gradient-to-r from-[#0B2044] to-[#51B8F2] transition-all duration-700 ${
+                              className={`absolute top-1/2 transform -translate-y-1/2 h-0.5 bg-gradient-to-r dark:from-slate-800 dark:to-blue-500 from-[#0B2044] to-[#51B8F2] transition-all duration-700 ${
                                 visibleLines.has(index)
                                   ? "opacity-100 w-8"
                                   : "opacity-0 w-0"
@@ -205,7 +205,7 @@ const Timeline = () => {
 
                             {/* Pulsing Ring */}
                             <div
-                              className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full border-2 border-[#51B8F2] transition-all duration-700 ${
+                              className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full border-2 dark:border-blue-500 border-[#51B8F2] transition-all duration-700 ${
                                 visibleDots.has(index)
                                   ? "scale-100 opacity-50 timeline-dot-pulse"
                                   : "scale-0 opacity-0"
@@ -214,9 +214,9 @@ const Timeline = () => {
 
                             {/* Main Timeline Dot */}
                             <div
-                              className={`relative w-6 h-6 rounded-full border-4 border-white shadow-lg transition-all duration-700 ${
+                              className={`relative w-6 h-6 rounded-full border-4 border-white dark:border-blue-200 shadow-lg transition-all duration-700 ${
                                 visibleDots.has(index)
-                                  ? "bg-gradient-to-br from-[#0B2044] to-[#51B8F2] scale-110"
+                                  ? "bg-gradient-to-br dark:from-blue-700 dark:to-blue-500 from-[#0B2044] to-[#51B8F2] scale-110"
                                   : "bg-gray-300 scale-75"
                               }`}
                             >
@@ -228,13 +228,13 @@ const Timeline = () => {
                                     : "opacity-0"
                                 }`}
                               >
-                                <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
+                                <div className="w-2 h-2 dark:bg-blue-100 bg-white rounded-full animate-pulse" />
                               </div>
                             </div>
 
                             {/* Year Badge */}
                             <div
-                              className={`absolute -bottom-10 left-1/2 transform -translate-x-1/2 bg-white text-[#0B2044] text-xs font-bold px-3 py-1 rounded-full shadow-md border border-gray-100 transition-all duration-200 ${
+                              className={`absolute -bottom-10 left-1/2 transform -translate-x-1/2 bg-white text-[#0B2044] dark:bg-slate-800 dark:border-slate-700 dark:text-blue-300 text-xs font-bold px-3 py-1 rounded-full shadow-md border border-gray-100 transition-all duration-200 ${
                                 visibleDots.has(index)
                                   ? "opacity-100 translate-y-0"
                                   : "opacity-0 translate-y-4"
@@ -267,7 +267,7 @@ const Timeline = () => {
                     <div className="md:hidden relative pl-8">
                       {/* Mobile Dot - Static, no animation */}
                       <div className="absolute left-6 top-6 z-20 transform -translate-x-1/2">
-                        <div className="w-4 h-4 rounded-full border-2 border-white shadow-md bg-gradient-to-br from-[#0B2044] to-[#51B8F2]" />
+                        <div className="w-4 h-4 rounded-full border-2 dark:border-blue-200 border-white shadow-md bg-gradient-to-br dark:from-blue-700 dark:to-blue-500 from-[#0B2044] to-[#51B8F2]" />
                       </div>
 
                       {/* Mobile Card */}

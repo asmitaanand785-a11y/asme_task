@@ -5,15 +5,15 @@ export default function Achievements() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative bg-white px-4 sm:px-6 md:px-10 lg:px-16 py-16 sm:py-20">
+    <section className="relative bg-white dark:bg-slate-900 px-4 sm:px-6 md:px-10 lg:px-16 py-16 sm:py-20">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
           <div className="space-y-6">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#021640] leading-tight tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold dark:text-white text-[#021640] leading-tight tracking-tight">
               Our Achievements
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto">
               ASME NIT Rourkela excels in fostering innovation and leadership
               through workshops, competitions, and expert lectures. Recognized
               for achievements in events like the Student Design Challenge and
@@ -26,7 +26,7 @@ export default function Achievements() {
 
           <div className="pt-8">
             <button
-              className="bg-[#021640] hover:bg-[#021640]/90 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg"
+              className="bg-[#021640] dark:bg-blue-800 dark:hover:bg-blue-800/90 hover:bg-[#021640]/90 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg"
               onClick={() => navigate("/achievements")}
             >
               View all Achievements
@@ -41,25 +41,25 @@ export default function Achievements() {
             .map((item, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 hover:border-[#021640]/30 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
+                className="bg-white dark:bg-[#13233F] dark:border-slate-700 border border-gray-200 hover:border-[#021640]/30 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="inline-block px-3 py-1 bg-[#021640]/10 text-[#021640] rounded-full text-sm font-semibold">
+                    <div className="inline-block px-3 py-1 bg-[#021640]/10 dark:bg-blue-800/10 text-[#021640] dark:text-blue-300 rounded-full text-sm font-semibold">
                       {item.year}
                     </div>
-                    <div className="w-2 h-2 bg-[#021640] rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="w-2 h-2 bg-[#021640] dark:bg-blue-500 rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  <h4 className="font-bold text-lg text-[#021640] leading-tight">
+                  <h4 className="font-bold text-lg text-[#021640] dark:text-white leading-tight">
                     {item.title}
                   </h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
                     {item.description}
                   </p>
                 </div>
 
                 {/* Simple accent line */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#021640] to-blue-500 rounded-t-xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r dark:from-[#2563EB] dark:to-[#38BDF8] from-[#021640] to-blue-500 rounded-t-xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </div>
             ))}
         </div>

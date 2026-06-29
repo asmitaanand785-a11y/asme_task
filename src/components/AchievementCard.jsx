@@ -26,7 +26,7 @@ const ImageCarousel = ({ images, title }) => {
 
   return (
     <div className="mb-4 overflow-hidden rounded-lg relative group">
-      <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
+      <div className="w-full h-48 bg-gray-100 dark:bg-slate-700 flex items-center justify-center">
         <img
           src={images[currentIndex]}
           alt={`${title} - Image ${currentIndex + 1}`}
@@ -126,11 +126,11 @@ const AchievementCard = ({
     >
       <div
         className={`
-          max-w-md mx-auto rounded-xl shadow-lg border border-gray-100
+          max-w-md mx-auto rounded-xl shadow-lg border dark:border-slate-700 dark:hover:border-blue-500/50 border-gray-100
           transition-all duration-700 group cursor-pointer relative overflow-hidden
-          bg-white transform-gpu
+          bg-white dark:bg-[#13233F] transform-gpu
           ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}
-          hover:scale-105 hover:shadow-2xl hover:border-[#51B8F2]
+          hover:scale-105 hover:shadow-2xl dark:hover:bg-[#18304F] hover:border-[#51B8F2]
           ${isLeft ? "ml-0" : "mr-0"}
         `}
         onMouseEnter={() => setIsHovered(true)}
@@ -140,8 +140,8 @@ const AchievementCard = ({
         <div className="absolute inset-0 bg-gradient-to-br from-[#0B2044]/5 via-transparent to-[#51B8F2]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
         {/* Top accent line with animation */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#0B2044] to-[#51B8F2] transition-all duration-500 group-hover:h-2">
-          <div className="h-full w-0 bg-gradient-to-r from-[#51B8F2] to-[#0B2044] transition-all duration-700 group-hover:w-full"></div>
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r dark:from-[#2563EB] dark:to-[#38BDF8] from-[#0B2044] to-[#51B8F2] transition-all duration-500 group-hover:h-2">
+          <div className="h-full w-0 bg-gradient-to-r dark:from-[#2563EB] dark:to-[#38BDF8] from-[#51B8F2] to-[#0B2044] transition-all duration-700 group-hover:w-full"></div>
         </div>
 
         <div className="relative p-6 pt-8">
@@ -150,8 +150,8 @@ const AchievementCard = ({
 
           {/* Year badge with enhanced styling */}
           <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center text-[#0B2044] text-sm font-semibold bg-[#51B8F2]/10 px-3 py-1.5 rounded-full">
-              <Calendar className="h-4 w-4 mr-2 text-[#51B8F2]" />
+            <div className="flex items-center dark:bg-blue-900/60 dark:text-blue-300 text-[#0B2044] text-sm font-semibold bg-[#51B8F2]/10 px-3 py-1.5 rounded-full">
+              <Calendar className="h-4 w-4 mr-2 dark:text-blue-400 text-[#51B8F2]" />
               <span className="uppercase tracking-wide">{year}</span>
             </div>
             <div
@@ -159,17 +159,17 @@ const AchievementCard = ({
                 isHovered ? "scale-110 rotate-12" : "scale-100 rotate-0"
               }`}
             >
-              <Award className="h-5 w-5 text-[#51B8F2]" />
+              <Award className="h-5 w-5 dark:text-amber-400 text-[#51B8F2]" />
             </div>
           </div>
 
           {/* Title with enhanced typography */}
-          <h3 className="text-xl font-bold mb-4 text-[#0B2044] group-hover:text-[#51B8F2] transition-colors duration-300 leading-tight">
+          <h3 className="text-xl font-bold mb-4 dark:text-white text-[#0B2044] dark:group-hover:text-blue-100 group-hover:text-[#51B8F2] transition-colors duration-300 leading-tight">
             {title}
           </h3>
 
           {/* Description with better spacing */}
-          <p className="text-gray-600 leading-relaxed text-sm mb-6">
+          <p className="text-gray-600 dark:text-gray-300 leading-normal text-base mb-6">
             {description}
           </p>
 
@@ -177,12 +177,12 @@ const AchievementCard = ({
           <div className="flex items-center justify-between">
             <div className="flex-1">
               <div className="h-1 bg-gray-200 rounded-full overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-[#0B2044] to-[#51B8F2] rounded-full transition-all duration-700 group-hover:w-full w-0"></div>
+                <div className="h-full bg-gradient-to-r dark:from-[#2563EB] dark:to-[#38BDF8] from-[#0B2044] to-[#51B8F2] rounded-full transition-all duration-700 group-hover:w-full w-0"></div>
               </div>
             </div>
             <TrendingUp
-              className={`ml-3 h-4 w-4 text-[#51B8F2] transition-all duration-300 ${
-                isHovered ? "translate-x-1" : ""
+              className={`ml-3 h-4 w-4 dark:text-blue-400 text-[#51B8F2] transition-all duration-300 ${
+                isHovered ? "translate-x-1 " : ""
               }`}
             />
           </div>

@@ -27,7 +27,7 @@ export const siteConfig = {
   },
 
   about: {
-    title: "Who are we? And About Us Preview",
+    title: "Who are we?",
     description:
       "ASME NIT Rourkela is dedicated to fostering engineering innovation among students. We serve as a pivotal connecting link between academia and industry, tackling technical obstacles with enthusiasm through our various initiatives and events. ASME NIT Rourkela is committed to fostering engineering innovation and practical application among students. All of us are free to make a positive impact through our various technical and non-events.",
     button: "Learn More",

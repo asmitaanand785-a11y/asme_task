@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 
 const SponsorsSection = () => {
   return (
-    <section className="relative bg-white px-4 sm:px-6 md:px-10 lg:px-16 py-16 sm:py-20">
+    <section className="relative bg-white dark:bg-slate-900 px-4 sm:px-6 md:px-10 lg:px-16 py-16 sm:py-20">
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-10 w-72 h-72 bg-blue-50 rounded-full opacity-40 blur-2xl"></div>
@@ -17,10 +17,10 @@ const SponsorsSection = () => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <div className="space-y-6">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#021640] leading-tight tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#021640] dark:text-white leading-tight tracking-tight">
               Our Trusted Partners
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto">
               Proudly supported by amazing organizations who believe in our
               mission and help us drive innovation forward.
             </p>
@@ -64,7 +64,7 @@ const SponsorsSection = () => {
                 rel="noopener noreferrer"
                 className="block group"
               >
-                <div className="h-64 bg-gradient-to-br from-white to-gray-50/50 flex items-center justify-center rounded-2xl border border-gray-200 hover:border-[#021640]/30 hover:shadow-lg transition-all duration-300 p-12 group-hover:-translate-y-1">
+                <div className="h-64 bg-gradient-to-br from-white to-gray-50/50 dark:from-[#1B2B45] dark:to-[#1B2B45] dark:border-slate-600/50 flex items-center justify-center rounded-2xl border border-gray-200 dark:hover:border-blue-500 hover:border-[#021640]/30 hover:shadow-lg transition-all duration-300 p-12 dark:hover:-translate-y-[-8px] group-hover:-translate-y-1">
                   <img
                     src={sponsor.image}
                     alt={sponsor.name}
@@ -72,7 +72,7 @@ const SponsorsSection = () => {
                   />
 
                   {/* Accent line */}
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#021640] to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r dark:from-transparent dark:to-transparent from-[#021640] to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </div>
               </a>
             </SwiperSlide>

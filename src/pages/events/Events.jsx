@@ -27,10 +27,10 @@ const Events = () => {
           {/* Mobile Empty State */}
           <div className="md:hidden flex flex-col items-center justify-center py-20">
             <div className="text-8xl mb-6">🎪</div>
-            <h3 className="text-3xl font-bold text-[#021640] mb-4 text-center">
+            <h3 className="text-3xl font-bold dark:text-white text-[#021640] mb-4 text-center">
               {filter === "all" ? "No Events Yet" : `No ${filter} Events`}
             </h3>
-            <p className="text-lg text-gray-600 text-center max-w-md mb-8">
+            <p className="text-lg text-gray-600 dark:text-gray-300 text-center max-w-md mb-8">
               {filter === "all"
                 ? "We're working on organizing amazing events. Stay tuned for exciting announcements!"
                 : `No ${filter} events found. Check out other categories or come back later for updates.`}
@@ -55,10 +55,10 @@ const Events = () => {
           <div className="hidden md:block col-span-full">
             <div className="flex flex-col items-center justify-center py-20">
               <div className="text-8xl mb-6">🎪</div>
-              <h3 className="text-3xl font-bold text-[#021640] mb-4">
+              <h3 className="text-3xl font-bold dark:text-white text-[#021640] mb-4">
                 {filter === "all" ? "No Events Yet" : `No ${filter} Events`}
               </h3>
-              <p className="text-lg text-gray-600 text-center max-w-md mb-8">
+              <p className="text-lg text-gray-600 dark:text-gray-300 text-center max-w-md mb-8">
                 {filter === "all"
                   ? "We're working on organizing amazing events. Stay tuned for exciting announcements!"
                   : `No ${filter} events found. Check out other categories or come back later for updates.`}
@@ -87,15 +87,15 @@ const Events = () => {
   };
 
   return (
-    <section className="relative bg-white min-h-screen px-4 sm:px-6 md:px-10 lg:px-16 pt-[80px] pb-16 sm:pb-20">
+    <section className="relative dark:bg-slate-900 bg-white min-h-screen px-4 sm:px-6 md:px-10 lg:px-16 pt-[80px] pb-16 sm:pb-20">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16 pt-8">
           <div className="space-y-6">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#021640] leading-tight tracking-tight">
+            <h1 className="text-4xl sm:text-[42px] md:text-5xl font-bold dark:text-white text-[#021640] leading-tight tracking-tight">
               Our Events
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto">
               Discover our technical workshops, competitions, and networking
               events designed to enhance your engineering journey and foster
               innovation.
@@ -113,8 +113,8 @@ const Events = () => {
                 onClick={() => setFilter(option.value)}
                 className={`px-8 py-3 rounded-lg border-2 text-base font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 ${
                   filter === option.value
-                    ? "bg-[#021640] text-white border-[#021640] shadow-lg"
-                    : "bg-white text-[#021640] border-[#021640] hover:bg-[#021640] hover:text-white"
+                    ? "bg-[#021640] dark:bg-[#0F2A5F] dark:text-white text-white border-[#021640] dark:border-blue-800 shadow-lg"
+                    : "bg-white dark:bg-[#24364F] dark:text-slate-200 text-[#021640] dark:border-slate-600 border-[#021640] dark:hover:bg-[#2C4363] dark:hover:border-blue-400/50 hover:bg-[#021640] hover:text-white"
                 }`}
               >
                 {option.label}
@@ -127,7 +127,7 @@ const Events = () => {
             <div className="relative w-full max-w-xs">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="w-full px-6 py-3 bg-white border-2 border-[#021640] text-[#021640] rounded-lg font-semibold text-base flex items-center justify-between transition-all duration-300 hover:bg-[#021640] hover:text-white"
+                className="w-full px-6 py-3 bg-white dark:bg-[#0F2A5F] dark:border-[#0F2A5F]/10 border-2 border-[#021640] dark:text-white text-[#021640] rounded-lg font-semibold text-base flex items-center justify-between transition-all duration-300 dark:hover:bg-[#173B82] hover:bg-[#021640] hover:text-white"
               >
                 <span>
                   {filterOptions.find((opt) => opt.value === filter)?.label}
@@ -146,10 +146,10 @@ const Events = () => {
                         setFilter(option.value);
                         setIsDropdownOpen(false);
                       }}
-                      className={`w-full px-6 py-3 text-left text-base font-medium transition-all duration-200 hover:bg-[#021640] hover:text-white ${
+                      className={`w-full px-6 py-3 text-left text-base font-medium transition-all duration-200 dark:hover:hover:bg-[#2C4363] hover:bg-[#021640] hover:text-white ${
                         filter === option.value
-                          ? "bg-[#021640] text-white"
-                          : "text-[#021640] border-b border-gray-200 last:border-b-0"
+                          ? "bg-[#021640] dark:bg-[#0F2A5F] dark:border-[#0F2A5F]/10 text-white"
+                          : "text-[#021640] dark:border-slate-600 dark:text-slate-200 dark:bg-[#24364F] border-b border-gray-200 last:border-b-0"
                       }`}
                     >
                       {option.label}

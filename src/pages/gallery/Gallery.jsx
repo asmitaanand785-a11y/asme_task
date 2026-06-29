@@ -37,8 +37,8 @@ const YearButton = ({ year, isSelected, onClick }) => {
       onClick={onClick}
       className={`px-4 py-1 rounded-full text-sm md:text-base transition-all ${
         isSelected
-          ? "bg-[#061946] text-white font-medium"
-          : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+          ? "bg-[#061946] dark:bg-[#0F2A5F] dark:text-white text-white font-medium"
+          : "bg-gray-100 dark:bg-[#24364F] dark:text-slate-200 text-gray-700 hover:bg-gray-200"
       }`}
     >
       {label === "others" ? "others" : label}
@@ -89,7 +89,7 @@ export default function GallaryPage() {
   })();
 
   return (
-    <div className="w-full">
+    <div className="w-full dark:bg-slate-900">
       {/* Hero Banner Carousel */}
       <div className="relative h-[280px] sm:h-[320px] md:h-[400px] lg:h-[480px] w-full overflow-hidden">
         {/* Carousel Slides */}
@@ -129,7 +129,7 @@ export default function GallaryPage() {
         <div className="mb-12">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-6">
             <div>
-              <h2 className="text-black text-2xl md:text-[48px] font-bold leading-tight mb-2">
+              <h2 className="text-black dark:text-white text-4xl md:text-5xl font-bold leading-tight mb-2">
                 Gallery
               </h2>
               <div className="flex flex-wrap gap-3 mt-4">
@@ -143,7 +143,7 @@ export default function GallaryPage() {
                 ))}
               </div>
             </div>
-            <p className="text-black-600 md:max-w-xl text-sm md:text-base">
+            <p className="text-black-600 dark:text-gray-300 md:max-w-xl text-lg md:text-lg">
               Step into our visual storybook — where every image captures a
               moment, every frame holds a memory, and every detail speaks of the
               journey we’ve lived and the beauty we’ve created. Welcome to our

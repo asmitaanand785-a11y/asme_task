@@ -17,15 +17,15 @@ export default function GallerySection() {
   };
 
   return (
-    <section className="relative bg-white px-4 sm:px-6 md:px-10 lg:px-16 py-16 sm:py-20">
+    <section className="relative dark:bg-slate-900 bg-white px-4 sm:px-6 md:px-10 lg:px-16 py-16 sm:py-20">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
           <div className="space-y-6">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#021640] leading-tight tracking-tight">
+            <h2 className="text-4xl sm:text-4xl md:text-5xl font-bold dark:text-white text-[#021640] leading-tight tracking-tight">
               Gallery
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto">
               Explore our vibrant moments captured through stunning visuals that
               showcase our activities, achievements, and memorable experiences.
             </p>
@@ -34,7 +34,7 @@ export default function GallerySection() {
           <div className="pt-8">
             <button
               onClick={viewFullGallery}
-              className="bg-[#021640] hover:bg-[#021640]/90 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg"
+              className="bg-[#021640] dark:bg-blue-800 dark:hover:bg-blue-800/90 hover:bg-[#021640]/90 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg"
             >
               View Full Gallery
             </button>
@@ -70,7 +70,7 @@ export default function GallerySection() {
               </div>
 
               {/* Accent line */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#021640] to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r dark:from-[#2563EB] dark:to-[#38BDF8] from-[#021640] to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
             </div>
           ))}
         </div>

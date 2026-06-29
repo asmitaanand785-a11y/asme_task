@@ -13,7 +13,7 @@ const Footer = ({
   year = new Date().getFullYear(),
 }) => {
   return (
-    <footer className="bg-[#0B2044] text-white px-4 pt-8 pb-8 sm:px-8 sm:pt-10 sm:pb-10 md:px-12 md:pt-12 md:pb-12">
+    <footer className="bg-[#0B2044] dark:bg-slate-900 text-white px-4 pt-8 pb-8 sm:px-8 sm:pt-10 sm:pb-10 md:px-12 md:pt-12 md:pb-12">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-16">
           {/* Logo and Description Section */}
