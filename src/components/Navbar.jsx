@@ -65,7 +65,7 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-base font-medium text-gray-700 hover:text-[#021640] transition-colors duration-300 whitespace-nowrap px-4 py-2 rounded-lg hover:bg-gray-100"
+                className="relative text-base font-semibold text-[#021640] px-4 py-2 rounded-lg transition-all duration-300 hover:scale-105 hover:bg-slate-50 after:absolute after:bottom-0 after:left-0 after:h-[2.5px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-[#0A1440] after:to-[#1A56DB] after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
               >
                 {item.name}
               </a>
